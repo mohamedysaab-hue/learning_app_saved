@@ -294,7 +294,6 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({ user, onNavigate, onS
                   onClick={() => onNavigate('game')}
                   className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all hover:scale-[1.02]"
                   disabled={isTrialExpired}
-                  disabled={isTrialExpired}
                 >
                   <BookOpen className="w-8 h-8 mx-auto mb-2" />
                   <div className="font-semibold">
@@ -386,12 +385,10 @@ const DashboardScreen: React.FC<DashboardScreenProps> = ({ user, onNavigate, onS
                 onKeyPress={handleKeyPress}
                 placeholder="Ask me about AI concepts..."
                 disabled={isLoading || user.dailyChatMessagesUsed >= currentLimits.chat}
-                disabled={isLoading || user.dailyChatMessagesUsed >= currentLimits.chat}
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               />
               <button
                 onClick={sendMessage}
-                disabled={!inputMessage.trim() || isLoading || user.dailyChatMessagesUsed >= currentLimits.chat}
                 disabled={!inputMessage.trim() || isLoading || user.dailyChatMessagesUsed >= currentLimits.chat}
                 className="bg-purple-500 text-white p-2 rounded-xl hover:bg-purple-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >

@@ -27,10 +27,6 @@ export const userService = {
         trial_end_date: trialEndDate.toISOString(),
         daily_questions_used: 0,
         daily_chat_messages_used: 0,
-        subscription_plan: 'free_trial',
-        trial_end_date: trialEndDate.toISOString(),
-        daily_questions_used: 0,
-        daily_chat_messages_used: 0,
       })
       .select()
       .single();
@@ -253,10 +249,6 @@ export const userService = {
       streak: dbUser.streak,
       questionsAnswered: dbUser.questions_answered,
       correctAnswers: dbUser.correct_answers,
-      subscriptionPlan: dbUser.subscription_plan || 'free_trial',
-      trialEndDate: dbUser.trial_end_date ? new Date(dbUser.trial_end_date) : null,
-      dailyQuestionsUsed: dbUser.daily_questions_used || 0,
-      dailyChatMessagesUsed: dbUser.daily_chat_messages_used || 0,
       subscriptionPlan: dbUser.subscription_plan || 'free_trial',
       trialEndDate: dbUser.trial_end_date ? new Date(dbUser.trial_end_date) : null,
       dailyQuestionsUsed: dbUser.daily_questions_used || 0,
